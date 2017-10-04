@@ -1,10 +1,10 @@
 # QuickDraw.pde
-QuickDraw.pde is a class for the [Processing](https://www.procssing.org) Development Enviroment that makes it easy to create and manipulate drawings from [Google's Quick, Draw! Experiment](https://quickdraw.withgoogle.com) in your own sketches.
+QuickDraw.pde is a class for the [Processing](https://www.procssing.org) Development Enviroment that makes it easy to create and manipulate drawings from [Google's Quick, Draw! Experiment](https://quickdraw.withgoogle.com) in your own Processing sketches.
 
 # Getting Started
 If you have not already done so, you should become briefly familiar with the Quick, Draw! [data](https://quickdraw.withgoogle.com/data) and resulting [dataset](https://github.com/googlecreativelab/quickdraw-dataset).
 
-For our purposes, we'll be using the [Simplified Drawing files](https://console.cloud.google.com/storage/browser/quickdraw_dataset/full/simplified) from the dataset, which have already been preprocessed by Google to be easier to work with.
+For our purposes, we'll be using the [Simplified Drawing files](https://console.cloud.google.com/storage/browser/quickdraw_dataset/full/simplified), which have been preprocessed by Google to be easier to work with.
 
 >**Simplified Drawing files (.ndjson)**
 >
