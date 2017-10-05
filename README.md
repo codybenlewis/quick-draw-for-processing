@@ -42,11 +42,11 @@ That's it! You're now ready to create drawings.
 
 ## Documentation
 
-The class currently has 4 main public functions for creating and manipulating
+The QuickDraw class currently has 4 main public functions for creating and manipulating the drawing data.
 
 ### create()
 
-Draws a Google Quick, Draw! drawing to the screen. By default, the first two parameters set the location of the upper-left corner, the third sets the width, and the fourth sets the height. The way these parameters are interpreted, however, may be changed with the `mode()` function.
+Draws a Google Quick, Draw! drawing to the screen. This function was modeled by the Processing's built in `ellipse()` and `rect()` functions. By default, the first two parameters set the location of the upper-left corner, the third sets the width, and the fourth sets the height. The way these parameters are interpreted, however, may be changed with the `mode()` function.
 
 The fifth paramter sets the index of the drawing you want to pull data from and is 0 by default. The sixth and seventh paramters set the start and stop position of the drawing and are resptively 0.0 and 1.0 by default.
 
@@ -75,4 +75,23 @@ qd.create(x1, y1, x2, y2, index, start, stop)
  
  stop     float: float between 0.0 and 1.0
 ```
-### 
+### mode()
+
+Modifies the location from which drawings are drawn by changing the way in which parameters given to `create()` are intepreted. This function was modeled by the Processing's built in `ellipseMode()` and `rectMode()` functions.
+
+The default mode is `rectMode(CENTER)`, interprets the first two parameters of `create()` as the shape's center point, while the third and fourth parameters are its width and height.
+
+`rectMode(CORNER)` interprets the first two parameters of `rect()` as the upper-left corner of the shape, while the third and fourth parameters are its width and height.
+
+`rectMode(CORNERS)` interprets the first two parameters of `rect()` as the location of one corner, and the third and fourth parameters as the location of the opposite corner.
+
+The parameter must be written in ALL CAPS because Processing is a case-sensitive language. The built in variables CENTER, CORNER, and CORNERS equate to the integers 3, 0, and 1 repsetively, which can also be input as parameters.
+
+#### Syntax
+```
+mode(mode)
+```
+#### Parameters
+```
+mode	int: either CENTER, CORNER, CORNERS
+```
