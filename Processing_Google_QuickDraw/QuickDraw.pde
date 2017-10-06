@@ -23,8 +23,10 @@ class QuickDraw {
   int marker = -1;
 
   /* An boolean used to maintain the way the lines are
-   drawn. Updated by the curve() and noCurve function */
-  boolean curve;
+   drawn with or without the curveVertex() function.
+   Updated by the curves() and noCurves() functions */
+
+  boolean curves = true;
 
   QuickDraw (String p) {  
 
@@ -41,7 +43,8 @@ class QuickDraw {
 
     noFill();
 
-    /* */
+    /* sets the default position intrepration to
+     CENTER */
 
     mode = CENTER;
 
@@ -175,16 +178,19 @@ class QuickDraw {
        by excluding the start and end of the xConcat array
        which by default is the start and end of a line*/
       if (xConcat[k] != marker) {
-        if (k == start || k == end-1) {
-          /*end -1 is the marker so end-2 is the last point of the line*/
-          curveVertex(x + x1, y + y1);
-          curveVertex(x + x1, y + y1);
+        if (curves == false) {
+          vertex(x + x1, y + y1);
         } else {
-          if (xConcat[k+1] == marker || xConcat[k-1] == marker) {
+          if (k == start || k == end) {
             curveVertex(x + x1, y + y1);
             curveVertex(x + x1, y + y1);
           } else {
-            curveVertex(x + x1, y + y1);
+            if (xConcat[k+1] == marker || xConcat[k-1] == marker) {
+              curveVertex(x + x1, y + y1);
+              curveVertex(x + x1, y + y1);
+            } else {
+              curveVertex(x + x1, y + y1);
+            }
           }
         }
       } else {
@@ -231,50 +237,6 @@ class QuickDraw {
 
   void create(float x1, float y1, float x2, float y2) {
     create(x1, y1, x2, y2, 0, 0, 1);
-  }
-
-
-  ////////////////////////////////////////////////////////////////
-
-
-  /* returns the amount of lines in the source data
-   which is also amount of drawings available in a
-   Google QuickDraw file */
-
-  int length() {
-    return(source.length -1);
-  }
-
-  /*returns the amount of points that make up the
-   input drawing
-   .  i - an integer between 0 and the amount of drawings
-   .      in the the source data. That number can be
-   .      determined by subtracting 1 from the number of
-   .      lines in the data file, or by using the provided
-   .      length function. */
-
-  int length(int i) {
-
-    /* repeats logic from the "create" function in order
-     to build arrays of x coordinates that can be used
-     to measure the lenghth of drawing "i" without
-     actually rendering it on screen. */
-
-    load(i);
-
-    int[] concat = new int[0];
-
-    for (int j=0; j < array.size(); j++) {
-
-      JSONArray values = array.getJSONArray(j);
-      int[] xint = values.getJSONArray(0).getIntArray();
-      xint = append(xint, marker);
-      concat = concat(concat, xint);
-    }
-
-
-    /* subtract the appended markers from the size of the*/
-    return concat.length - array.size();
   }
 
 
@@ -328,7 +290,7 @@ class QuickDraw {
       || r.equals("all") == true) {
       return ("source: " + path
         + "\nindex: " + i + " of " + length()
-        + "\nlength: " + length(i) + " points"
+        + "\nlength: " + points(i) + " points across " + length(i) +" lines"
         + "\nword: " + word
         + "\ncountrycode: " + countrycode
         + "\ntimestamp: " + timestamp);
@@ -374,6 +336,112 @@ class QuickDraw {
 
   /////////////////////////////////////////////////////////////////
 
+
+  /* returns the amount of lines in the source data
+   which is also amount of drawings available in a
+   Google QuickDraw file */
+
+  int length() {
+    return(source.length -1);
+  }
+
+
+  private int length(int index) {
+
+    /* repeats logic from the "create" and "length"
+     functions in order to build arrays of x coordinates
+     that can be used to measure the lenghth of drawing "i" without
+     actually rendering it on screen. */
+
+    load(index);
+
+    int[] concat = new int[0];
+
+    for (int j=0; j < array.size(); j++) {
+
+      JSONArray values = array.getJSONArray(j);
+      int[] xint = values.getJSONArray(0).getIntArray();
+      concat = concat(concat, xint);
+    }
+
+    /* subtract the appended markers from the size of the*/
+    return array.size();
+  }
+
+
+  /*returns the amount of points that make up the
+   input drawing
+   .  i - an integer between 0 and the amount of drawings
+   .      in the the source data. That number can be
+   .      determined by subtracting 1 from the number of
+   .      lines in the data file, or by using the provided
+   .      length function. */
+
+  int points(int index) {
+
+    /* repeats logic from the "create" function in order
+     to build arrays of x coordinates that can be used
+     to measure the lenghth of drawing "i" without
+     actually rendering it on screen. */
+
+    load(index);
+
+    int[] concat = new int[0];
+
+    for (int j=0; j < array.size(); j++) {
+
+      JSONArray values = array.getJSONArray(j);
+      int[] xint = values.getJSONArray(0).getIntArray();
+      concat = concat(concat, xint);
+    }
+
+    return concat.length;
+  }
+
+
+
+
+  /*returns the amount of points that make up the
+   input drawing or a drawing's specific line
+   .  i - an integer between 0 and the amount of drawings
+   .      in the the source data. That number can be
+   .      determined by subtracting 1 from the number of
+   .      lines in the data file, or by using the provided
+   .      length function. */
+
+  int points(int index, int line) {
+
+    load(index);
+
+    /* obtatins data directly from the speficied line
+     and measures the size of the line.
+     */
+     
+    JSONArray values = array.getJSONArray(line);
+    int[] xint = values.getJSONArray(0).getIntArray();
+    return xint.length;
+  }
+
+
+
+
+  /////////////////////////////////////////////////////////////////
+
+
+  /*Triggers whether or not the lines drawn on screen
+   will use the built in vertex or curveVertex functions*/
+
+  void curves() {
+    curves = true;
+  }
+
+  void noCurves() {
+    curves = false;
+  }
+
+  /////////////////////////////////////////////////////////////////
+
+
   private void load(int index) {
 
     /* load the data information of the input index */
@@ -386,6 +454,3 @@ class QuickDraw {
     array = object.getJSONArray("drawing");
   }
 }
-
-
-/////////////////////////////////////////////////////////////////
