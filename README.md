@@ -49,10 +49,10 @@ The QuickDraw class currently has 7 main public functions for processing the dra
 
 ```
 create()
-mode()
 info()
 length()
 points()
+mode()
 curves()
 noCurves()
 ```
@@ -88,28 +88,6 @@ qd.create(x1, y1, x2, y2, index, start, stop)
  
  stop       float: float between 0.0 and 1.0
 ```
-### mode()
-
-Modifies the location from which drawings are drawn by changing the way in which parameters given to `create()` are intepreted. This function was modeled by the Processing's built in `ellipseMode()` and `rectMode()` functions.
-
-The default mode is `rectMode(CENTER)`, which interprets the first two parameters of `create()` as the shape's center point, while the third and fourth parameters are its width and height.
-
-`rectMode(CORNER)` interprets the first two parameters of `rect()` as the upper-left corner of the shape, while the third and fourth parameters are its width and height.
-
-`rectMode(CORNERS)` interprets the first two parameters of `rect()` as the location of one corner, and the third and fourth parameters as the location of the opposite corner.
-
-The parameter must be written in ALL CAPS because Processing is a case-sensitive language. The built in variables CENTER, CORNER, and CORNERS equate to the integers 3, 0, and 1 respectively, which can also be input as parameters.
-
-#### Syntax
-```
-qd.mode(mode)
-```
-#### Parameters
-```
-qd          QuickDraw: a QuickDraw object
-mode        int: either CENTER, CORNER, CORNERS
-```
-
 ### info()
 Returns a String of information about a specified drawing. By default, the function will return all available data on the drawing across multiple lines. Data points include what source file the drawing is found in, what index of the dataset the drawing is found on, how many points the drawing is made from, what word was the drawing is based on, what country the drawing is from, and what date and time the drawing was originally created at.
 
@@ -126,7 +104,6 @@ qd          QuickDraw: a QuickDraw object
 index       int: int between 0 and the object's source file length
 datapoint   str: "source", "index", "length", "word", "countrycode", or "timestamp"
 ```
-
 ### length()
 Returns an integer amount of lines in the dataset or amount of drawn lines in an index. Used in `info()` to create the data point output as "length".
 
@@ -156,6 +133,28 @@ qd          QuickDraw: a QuickDraw object
 index       int: int between 0 and the object's source file length
 index       int: int between 0 and the value of (qd.info(index) - 1)
 ```
+### mode()
+
+Modifies the location from which drawings are drawn by changing the way in which parameters given to `create()` are intepreted. This function was modeled by the Processing's built in `ellipseMode()` and `rectMode()` functions.
+
+The default mode is `rectMode(CENTER)`, which interprets the first two parameters of `create()` as the shape's center point, while the third and fourth parameters are its width and height.
+
+`rectMode(CORNER)` interprets the first two parameters of `rect()` as the upper-left corner of the shape, while the third and fourth parameters are its width and height.
+
+`rectMode(CORNERS)` interprets the first two parameters of `rect()` as the location of one corner, and the third and fourth parameters as the location of the opposite corner.
+
+The parameter must be written in ALL CAPS because Processing is a case-sensitive language. The built in variables CENTER, CORNER, and CORNERS equate to the integers 3, 0, and 1 respectively, which can also be input as parameters.
+
+#### Syntax
+```
+qd.mode(mode)
+```
+#### Parameters
+```
+qd          QuickDraw: a QuickDraw object
+mode        int: either CENTER, CORNER, CORNERS
+```
+
 
 ### curves()
 Enables the default geometry used to smooth the lines drawn on screen within `create()`. Note that this behavior is active by default, so `curves()` only needs to be called to reactivate it after calling `noCurves()`.
