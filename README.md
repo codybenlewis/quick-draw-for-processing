@@ -1,7 +1,7 @@
 # QuickDraw.pde
-QuickDraw.pde is a class for the [Processing](https://www.procssing.org) Development Enviroment that makes it easy to work with drawings from [Google's Quick, Draw! Experiment](https://quickdraw.withgoogle.com) in your own sketches. 
+QuickDraw.pde is a class for the [Processing](https://www.procssing.org) Development Environment that makes it easy to work with drawings from [Google's Quick, Draw! Experiment](https://quickdraw.withgoogle.com) in your own sketches. 
 
-With time, the goal for this project is to turn the class into a proper library and begin to use in order to accessibly creare of new types of open source art and design. I hope it enables you do the same.
+With time, the goal for this project is to turn the class into a proper library and begin to use in order to accessibly create of new types of open source art and design. I hope it enables you do the same.
 
 ## Getting Started
 
@@ -45,10 +45,10 @@ That's it! You're now ready to create drawings.
 
 ## Documentation
 
-The QuickDraw class currently has 5 main public functions for creating and manipulating the drawing data.
+The QuickDraw class currently has 7 main public functions for processing the drawing data.
 
 ```
-create()`
+create()
 mode()
 info()
 length()
@@ -61,7 +61,7 @@ noCurves()
 
 Draws a Google Quick, Draw! drawing to the screen. This function was modeled by the Processing's built in `ellipse()` and `rect()` functions. By default, the first two parameters set the location of the upper-left corner, the third sets the width, and the fourth sets the height. The way these parameters are interpreted, however, may be changed with the `mode()` function.
 
-The fifth paramter sets the index of the drawing you want to pull data from and is 0 by default. The sixth and seventh paramters set the start and stop position of the drawing and are resptively 0.0 and 1.0 by default.
+The fifth parameter sets the index of the drawing you want to pull data from and is 0 by default. The sixth and seventh parameters set the start and stop position of the drawing and are receptively 0.0 and 1.0 by default.
 
 #### Syntax
 ```
@@ -98,7 +98,7 @@ The default mode is `rectMode(CENTER)`, which interprets the first two parameter
 
 `rectMode(CORNERS)` interprets the first two parameters of `rect()` as the location of one corner, and the third and fourth parameters as the location of the opposite corner.
 
-The parameter must be written in ALL CAPS because Processing is a case-sensitive language. The built in variables CENTER, CORNER, and CORNERS equate to the integers 3, 0, and 1 repsetively, which can also be input as parameters.
+The parameter must be written in ALL CAPS because Processing is a case-sensitive language. The built in variables CENTER, CORNER, and CORNERS equate to the integers 3, 0, and 1 respectively, which can also be input as parameters.
 
 #### Syntax
 ```
@@ -111,9 +111,9 @@ mode        int: either CENTER, CORNER, CORNERS
 ```
 
 ### info()
-Returns a String of information about a specified drawing. By default, the function will return all available data on the drawing across multiple lines. Datapoints include what source file the drawing is found in, what index of the dataset the drawing is found on, how many points the drawing is made from, what word was the drawing is based on, what country the drawing is from, and what date and time the drawing was originally created at.
+Returns a String of information about a specified drawing. By default, the function will return all available data on the drawing across multiple lines. Data points include what source file the drawing is found in, what index of the dataset the drawing is found on, how many points the drawing is made from, what word was the drawing is based on, what country the drawing is from, and what date and time the drawing was originally created at.
 
-When using "index" as the datapoint, the function will return the amount of points in the drawing. When using "index" as the datapoint, the function will return the index, parameter.
+When using "index" as the data point, the function will return the amount of points in the drawing. When using "index" as the data point, the function will return the index, parameter.
 
 #### Syntax
 ```
@@ -128,7 +128,7 @@ datapoint   str: "source", "index", "length", "word", "countrycode", or "timesta
 ```
 
 ### length()
-Returns the amount of lines in the dataset or in a specific drawing index as an integer. Used in `info()` to create the datapoint output as "length".
+Returns an integer amount of lines in the dataset or amount of drawn lines in an index. Used in `info()` to create the data point output as "length".
 
 #### Syntax
 ```
@@ -142,7 +142,7 @@ index     int: int between 0 and the object's source file length
 ```
 
 ### points()
-Returns the amount of points in a specific drawing index or a specific line within that index. Used in `info()` to create the datapoint output as "length".
+Returns an integer amount of points in a drawing index or a line within that index. Used in `info()` to create the data point output as "length".
 
 #### Syntax
 ```
@@ -157,7 +157,28 @@ index       int: int between 0 and the object's source file length
 index       int: int between 0 and the value of (qd.info(index) - 1)
 ```
 
+### curves()
+Enables the default geometry used to smooth the lines drawn on screen within `create()`. Note that this behavior is active by default, so `curves()` only needs to be called to reactivate it after calling `noCurves()`.
 
+#### Syntax
+```
+qd.noCurves()
+```
+#### Parameters
 
+```
+qd          QuickDraw: a QuickDraw object
+```
 
+### noCurves()
+Disables the default geometry used to smooth the lines drawn on screen via `create()`. Note that `curves()` is active by default, so it is necessary to call `noCurves()` to disable smoothing of lines.
 
+#### Syntax
+```
+qd.noCurves()
+```
+#### Parameters
+
+```
+qd          QuickDraw: a QuickDraw object
+```
