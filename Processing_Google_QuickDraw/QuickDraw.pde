@@ -17,9 +17,14 @@ class QuickDraw {
   int mode;
 
   /* An integer not found in any the Google
-   QuickDraw data */
+   QuickDraw data used to determine the end
+   of a stroke in a drawing*/
 
   int marker = -1;
+
+  /* An boolean used to maintain the way the lines are
+   drawn. Updated by the curve() and noCurve function */
+  boolean curve;
 
   QuickDraw (String p) {  
 
@@ -84,7 +89,6 @@ class QuickDraw {
         y2 = y2 - y1;
         x1 += x2/2;
         y1 += y2/2;
-        println(x1, x2);
       }
     }
 
@@ -142,8 +146,7 @@ class QuickDraw {
 
     beginShape();
 
-    for (int k = start; k < end; k++) { 
-
+    for (int k = start; k < end; k++) {
       /* Store the x and y values and remap them, centered
        to the input scale. The default data is comes
        stored in 256px by 256px coordiate squares. */
@@ -165,15 +168,32 @@ class QuickDraw {
        character/int do not draw that point. Close the current
        drawing and begin a new one for the next line.*/
 
-      if (xConcat[k] != marker || yConcat[k] != marker) {
-        vertex(x + x1, y + y1);
+      /*draws 2 curveVertex() points at the start and end of
+       a line since the first and last points in a series of
+       curveVertex() lines are be used to guide the beginning
+       and end of a the curve. Prevents out of bounds errors
+       by excluding the start and end of the xConcat array
+       which by default is the start and end of a line*/
+      if (xConcat[k] != marker) {
+        if (k == start || k == end-1) {
+          /*end -1 is the marker so end-2 is the last point of the line*/
+          curveVertex(x + x1, y + y1);
+          curveVertex(x + x1, y + y1);
+        } else {
+          if (xConcat[k+1] == marker || xConcat[k-1] == marker) {
+            curveVertex(x + x1, y + y1);
+            curveVertex(x + x1, y + y1);
+          } else {
+            curveVertex(x + x1, y + y1);
+          }
+        }
       } else {
         endShape();
         beginShape();
       }
     }
 
-    /* Finish drawing whatever the last stoke was */
+    /* Finish drawing whatever the last stroke was */
     endShape();
   }
 
@@ -263,7 +283,7 @@ class QuickDraw {
 
   /* A function that updates the mode of the drawing to
    change how the x1, y1, x2, and y2 are interpreted and
-   where the drawing is created from.
+   therefore where the drawing is created from.
    
    .  m - the type of mode you wish to use
    .      accepts CORNER (int 0), CORNERS (int 1)
@@ -301,78 +321,50 @@ class QuickDraw {
     String countrycode = object.getString("countrycode");
     String timestamp = object.getString("timestamp");
 
-    if (request == " "
-      || request == ""
-      || request == "all") {
+    String r = request.toLowerCase();
+
+    if (r.equals("") == true
+      || r.equals(" ") == true
+      || r.equals("all") == true) {
       return ("source: " + path
-        + "\nindex: " + i
-        + "\nlength: " + length(i)
+        + "\nindex: " + i + " of " + length()
+        + "\nlength: " + length(i) + " points"
         + "\nword: " + word
         + "\ncountrycode: " + countrycode
         + "\ntimestamp: " + timestamp);
-    } else if (request == "index" 
-      || request == "Index"
-      || request == "INDEX"
-      || request == "line"
-      || request == "line"
-      || request == "LINE"
-      || request == "0") {
+    } else if (r.equals("index") == true
+      || r.equals("line") == true
+      || r.equals("0") == true) {
       return(str(i));
-    } else if (request == "source"
-      || request == "Source"
-      || request == "SOURCE"
-      || request == "path"
-      || request == "Path"
-      || request == "PATH"
-      || request == "file"
-      || request == "File"
-      || request == "FILE"
-      || request == "1") {
+    } else if (r.equals("source") == true
+      || r.equals("path") == true
+      || r.equals("file") == true
+      || r.equals("1") == true) {
       return(path);
-    } else if (request == "word"
-      || request == "Word"
-      || request == "WORD"
-      || request == "2") {
+    } else if (r.equals("word") == true
+      || r.equals("2") == true) {
       return(word);
-    } else if (request == "countrycode"
-      || request == "CountryCode"
-      || request == "countryCode"
-      || request == "Countrycode"
-      || request == "COUNTRYCODE"
-      || request == "country"
-      || request == "Country"
-      || request == "COUNTRY"
-      || request == "code"
-      || request == "Code"
-      || request == "CODE"
-      || request == "3") {
+    } else if (r.equals("countrycode") == true
+      || r.equals("country") == true
+      || r.equals("code") == true
+      || r.equals("3") == true) {
       return(countrycode);
-    } else if (request == "timestamp"
-      || request == "TimeStamp"
-      || request == "timeStamp"
-      || request == "Timestamp"
-      || request == "TIMESTAMP"
-      || request == "time"
-      || request == "Time"
-      || request == "TIME"
-      || request == "stamp"
-      || request == "Stamp"
-      || request == "STAMP"
-      || request == "4") {
+    } else if (r.equals("timestamp") == true
+      || r.equals("time") == true
+      || r.equals("stamp") == true
+      || r.equals("4") == true) {
       return(timestamp);
-    } else if (request == "length"
-      || request == "Length"
-      || request == "LENGTH"
-      || request == "5") {
+    } else if (r.equals("length") == true
+      || r.equals("5") == true) {
       return(str(length((i))));
     } else {
-      return ("Unrecognized String parameter."
+      return ("Unrecognized String Parameter"
         + "\nTry using \"source\", "
         + "\"index\", "
         + "\"length\", "
         + "\"word\", "
         + "\"countrycode\", "
-        + "or \"timestamp\".");
+        + "or \"timestamp\"");
     }
   }
 
