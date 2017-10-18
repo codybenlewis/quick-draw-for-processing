@@ -100,7 +100,7 @@ qd.mode(mode)
 #### Parameters
 ```
 qd          QuickDraw: a QuickDraw object
-mode        int: either CENTER, CORNER, CORNERS
+mode        int: CENTER, CORNER, or CORNERS
 ```
 
 ### info()
@@ -147,7 +147,7 @@ qd.info(index, line)
 ```
 qd          QuickDraw: a QuickDraw object
 index       int: int between 0 and the object's source file length
-index       int: int between 0 and the value of (qd.info(index) - 1)
+line       int: int between 0 and the value of (qd.info(index) - 1)
 ```
 
 ### curves()
