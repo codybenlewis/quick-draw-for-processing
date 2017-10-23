@@ -290,7 +290,7 @@ class QuickDraw {
       || r.equals("all") == true) {
       return ("source: " + path
         + "\nindex: " + i + " of " + length()
-        + "\nlength: " + points(i) + " points across " + length(i) +" lines"
+        + "\nlength: " + length(i) + " lines / " + points(i) + " points"   
         + "\nword: " + word
         + "\ncountrycode: " + countrycode
         + "\ntimestamp: " + timestamp);
