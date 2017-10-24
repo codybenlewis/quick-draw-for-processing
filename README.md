@@ -7,8 +7,8 @@ I hope that it enables you to new types of open source art and design as it will
 ## Content
 
 - [Getting Started](#getting-started)
-  - [Prerequsites](#prerequisites)
   - [Installing](#installing)
+  - [Using the Library](#using-the-library)
 - [Reference](#reference)
   - [create()](#create)
   - [mode()](#mode)
@@ -21,9 +21,9 @@ I hope that it enables you to new types of open source art and design as it will
 
 # Getting Started
 
-To begin you'll have to first make sure you have the [latest version](https://www.processing.org/download/) of Processing Installed. This library has not yet been tested with deprecated versions.
+To begin, you'll have to first make sure you have the latest of Processing downloaded and installed, which you can get from [their website](https://www.processing.org/download/). You'll also need a copy of this library on your desktop, which you can get by clicking on the download button at [https://github.com/codybenlewis/Quick-Draw-for-Processing](https://github.com/codybenlewis/Quick-Draw-for-Processing) and selecting one of the packages provided.
 
-[Simplified Drawing Files](https://console.cloud.google.com/storage/browser/quickdraw_dataset/full/simplified) from the Google Quick, Draw! [dataset](https://github.com/googlecreativelab/quickdraw-dataset).
+Lastly, you'll need [Simplified Drawing Files](https://console.cloud.google.com/storage/browser/quickdraw_dataset/full/simplified) from the Google Quick, Draw! [dataset](https://github.com/googlecreativelab/quickdraw-dataset). The library has been designed specifically to work with only these types of files.
 
 >**Simplified Drawing files (.ndjson)**
 >
@@ -34,30 +34,68 @@ To begin you'll have to first make sure you have the [latest version](https://ww
 >3. Resample all strokes with a 1 pixel spacing.
 >4. Simplify all strokes using the [Ramer–Douglas–Peucker algorithm](https://en.wikipedia.org/wiki/Ramer%E2%80%93Douglas%E2%80%93Peucker_algorithm) with an epsilon value of 2.0.
 
-For this example I've downloaded and will be using the [apple.ndjson](https://storage.googleapis.com/quickdraw_dataset/full/simplified/apple.ndjson) data file :apple:.
+For the provided library examples I've downloaded and included the [apple.ndjson](https://storage.googleapis.com/quickdraw_dataset/full/simplified/apple.ndjson) data file :apple:.
+
 
 ## Installing
 
-Once you have finished downloading your file, begin by adding it to your sketch's data folder.
-*(Sketch > Add File)*
+Processing's official [library installation instructions](https://github.com/processing/processing/wiki/How-to-Install-a-Contributed-Library):
 
-The following lines have been included in the example file, but if you are starting with an empty sketch window, proceed by initializing a QuickDraw object from the class
+>Contributed libraries may be downloaded separately and manually placed within the libraries folder of your Processing sketchbook. As a reminder, the sketchbook is where your sketches are saved. To find (and change) the Processing sketchbook location on your computer, open the Preferences window from the Processing application (PDE) and look for the "Sketchbook location" item at the top.
+>
+>Copy the contributed library's folder into the libraries folder at this location. You will need to create the libraries folder if this is your first contributed library.
+>
+>By default the following locations are used for your sketchbook folder. For Mac users the sketchbook folder is located inside `~/Documents/Processing`. For Windows users the sketchbook folder is located inside folder `Documents/Processing`.
+>
+>Let's say you downloaded a library with name theLibrary. Then the folder structure of this library inside the libraries folder should look like the one below. The top folder of a library must have the same name as the .jar file located inside a library's library folder (minus the .jar extension):
+>
+>```
+>     Documents
+>           Processing
+>                 your sketch folders
+>                 libraries
+>                       theLibrary
+>                             examples
+>                             library
+>                                   theLibrary.jar
+>                             reference
+>                             src
+>```
+>
+>Some folders like examples or src might be missing. After a library has been successfully installed, **restart Processing application**.
+
+If you're having trouble, please visit the [read the full documentation](https://github.com/processing/processing/wiki/How-to-Install-a-Contributed-Library) for additional information and troubleshooting tips.
+
+## Using the Library
+
+Once you have finished downloading your files and installing the library, begin by adding importing the library to the sketch.
+
+```java
+import cbl.quickdraw.*;
+```
+
+Afterwards, initialize a QuickDraw object from the class
 
 ```java
 QuickDraw qd;
 ```
 
-and calling it within `void setup()` in order to construct it.
+and call it within `void setup()` in order to construct it.
 
 ```java
 void setup() {
-  qd = new QuickDraw("apple.ndjson");
+  qd = new QuickDraw(this, "filename.ndjson");
 }
 ```
 
-By default, constructing the object will set the drawings on screen to have no fill. If you want to use filled shapes within your sketch, call the `fill()` function anywhere  either within `setup()` or `draw()` below the object's construction.
+Replace `"filename.ndjson"` with the actual name of your data file, still surrounded by double quotes. In order to prevent a "NullPointerException", before running the program you'll need to make sure the data file you specify been first added to your sketch's data folder.
 
-That's it! You're now ready to create drawings.
+- From the menubar choose File → Add File...
+- Find and open your simplified data file
+
+By default, constructing the object will change the your sketch's default `fill()` settings to `noFill()`. If you want to use filled shapes within your sketch, call the `fill()` function anywhere within `void setup()` or `void draw()` below the object's construction. For more
+
+That's it. You're ready to create drawings!
 
 # Reference
 
