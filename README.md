@@ -1,7 +1,23 @@
 # QuickDraw.pde
-QuickDraw.pde is a class for the [Processing](https://www.procssing.org) Development Environment that makes it easy to work with drawings from [Google's Quick, Draw! Experiment](https://quickdraw.withgoogle.com) in your own sketches. 
 
-With time, the goal for this project is to turn the class into a proper library and begin to use in order to accessibly create of new types of open source art and design. I hope it enables you do the same.
+QuickDraw.pde is a [Processing](https://www.procssing.org) Development Environment library that makes it easy to explore and render drawings from [Google's Quick, Draw! Experiment](https://quickdraw.withgoogle.com) data set in your own sketches. 
+
+I hope that it enables you to accessibly create of new types of open source art and design as it will for me.
+
+## Content
+
+- [Getting Started](#getting-started)
+  - [Prerequsites](#prerequisites)
+  - [Installing](#installing)
+- [Reference](#reference)
+  - [create()](#create)
+  - [mode()](#mode)
+  - [info()](#info)
+  - [length()](#length)
+  - [points()](#points)
+  - [curves()](#curves)
+  - [noCurves()](#noCurves)
+- [License](#license)
 
 ## Getting Started
 
@@ -24,15 +40,17 @@ For this example I've downloaded and will be using the [apple.ndjson](https://st
 
 ### Installing
 
-
 Once you have finished downloading your file, begin by adding it to your sketch's data folder.
 *(Sketch > Add File)*
 
 The following lines have been included in the example file, but if you are starting with an empty sketch window, proceed by initializing a QuickDraw object from the class
+
 ```java
 QuickDraw qd;
 ```
+
 and calling it within `void setup()` in order to construct it.
+
 ```java
 void setup() {
   qd = new QuickDraw("apple.ndjson");
@@ -47,15 +65,13 @@ That's it! You're now ready to create drawings.
 
 The QuickDraw class currently has 7 main public functions for processing the drawing data.
 
-```
-create()
-mode()
-info()
-length()
-points()
-curves()
-noCurves()
-```
+- [create()](#create)
+- [mode()](#mode)
+- [info()](#info)
+- [length()](#length)
+- [points()](#points)
+- [curves()](#curves)
+- [noCurves()](#noCurves)
 
 ### create()
 
@@ -64,13 +80,16 @@ Draws a Google Quick, Draw! drawing to the screen. This function was modeled by 
 The fifth parameter sets the index of the drawing you want to pull data from and is 0 by default. The sixth and seventh parameters set the start and stop position of the drawing and are respectively 0.0 and 1.0 by default.
 
 #### Syntax
+
 ```
 qd.create(x1, y1, x2, y2)
 qd.create(x1, y1, x2, y2, index)
 qd.create(x1, y1, x2, y2, index, stop)
 qd.create(x1, y1, x2, y2, index, start, stop)
 ```
+
 #### Parameters
+
 ```
  qd         QuickDraw: a QuickDraw object
  x1         float: x-coordinate of the drawing by default
@@ -81,6 +100,9 @@ qd.create(x1, y1, x2, y2, index, start, stop)
  start      float: float between 0.0 and 1.0
  stop       float: float between 0.0 and 1.0
 ```
+
+---
+
 ### mode()
 
 Modifies the location from which drawings are drawn by changing the way in which parameters given to `create()` are interpreted. This function was modeled by the Processing's built in `ellipseMode()` and `rectMode()` functions.
@@ -94,54 +116,74 @@ The default mode is `rectMode(CENTER)`, which interprets the first two parameter
 The parameter must be written in ALL CAPS because Processing is a case-sensitive language. The built in variables CENTER, CORNER, and CORNERS equate to the integers 3, 0, and 1 respectively, which can also be input as parameters.
 
 #### Syntax
+
 ```
 qd.mode(mode)
 ```
+
 #### Parameters
+
 ```
 qd          QuickDraw: a QuickDraw object
 mode        int: CENTER, CORNER, or CORNERS
 ```
 
+---
+
 ### info()
+
 Returns a String of information about a specified drawing. By default, the function will return all available data on the drawing across multiple lines. Data points include what source file the drawing is found in, what index of the dataset the drawing is found on, how many points the drawing is made from, what word was the drawing is based on, what country the drawing is from, and what date and time the drawing was originally created at.
 
 When using the string "length" as the data point, the function will return the amount of points in the drawing. When using the string "index" as the data point, the function will return the index, parameter.
 
 #### Syntax
+
 ```
 qd.info(index)
 qd.info(index, "dataPoint")
 ```
+
 #### Parameters
+
 ```
 qd          QuickDraw: a QuickDraw object
 index       int: int between 0 and the object's source file length
 dataPoint   str: "source", "index", "length", "word", "countrycode", or "timestamp"
 ```
 
+---
+
 ### length()
+
 Returns an integer amount of drawings in the dataset or amount of drawn lines in an index. Used in `info()` to create the data point output as "length".
 
 #### Syntax
+
 ```
 qd.length()
 qd.info(index)
 ```
+
 #### Parameters
+
 ```
 qd        QuickDraw: a QuickDraw object
 index     int: int between 0 and the object's source file length
 ```
 
+---
+
 ### points()
+
 Returns an integer amount of points in a drawing index or one of the drawn lines within that index. Used in `info()` to create the data point output as "length".
 
 #### Syntax
+
 ```
 qd.info(index)
 qd.info(index, line)
 ```
+
 #### Parameters
 
 ```
@@ -150,26 +192,36 @@ index       int: int between 0 and the object's source file length
 line       int: int between 0 and the value of (qd.info(index) - 1)
 ```
 
+---
+
 ### curves()
+
 Enables the default geometry used to smooth the lines drawn on screen within `create()`. Note that this behavior is active by default, so it only necessary to call the function to reactivate the behavior after calling `noCurves()`.
 
 #### Syntax
+
 ```
 qd.noCurves()
 ```
+
 #### Parameters
 
 ```
 qd          QuickDraw: a QuickDraw object
 ```
 
+---
+
 ### noCurves()
+
 Disables the default geometry used to smooth the lines drawn on screen via `create()`. Note that `curves()` is active by default, so it is necessary to call `noCurves()` to disable smoothing of lines.
 
 #### Syntax
+
 ```
 qd.noCurves()
 ```
+
 #### Parameters
 
 ```
