@@ -1,8 +1,8 @@
 # QuickDraw.pde
 
-QuickDraw.pde is a [Processing](https://www.procssing.org) Development Environment library that makes it easy to explore and render drawings from [Google's Quick, Draw! Experiment](https://quickdraw.withgoogle.com) data set in your own sketches. 
+QuickDraw.pde is a [Processing](https://www.procssing.org) library that makes it easy to interface with drawings from [Google's Quick, Draw! Experiment](https://quickdraw.withgoogle.com) data set in your own sketches. 
 
-I hope that it enables you to accessibly create of new types of open source art and design as it will for me.
+I hope that it enables you to new types of open source art and design as it will for myself. If you create something with this dataset, please let me know [by e-mail](mailto:cblewisnj@gmail.com) and consider passing it along to [Google](https://aiexperiments.withgoogle.com/submit).
 
 ## Content
 
@@ -16,7 +16,7 @@ I hope that it enables you to accessibly create of new types of open source art 
   - [length()](#length)
   - [points()](#points)
   - [curves()](#curves)
-  - [noCurves()](#noCurves)
+  - [noCurves()](#nocurves)
 - [License](#license)
 
 ## Getting Started
@@ -63,7 +63,7 @@ That's it! You're now ready to create drawings.
 
 ## Reference
 
-The QuickDraw class currently has 7 main public functions for processing the drawing data.
+The QuickDraw class currently has 7 functions for intefacing with the drawing data.
 
 - [create()](#create)
 - [mode()](#mode)
@@ -71,7 +71,7 @@ The QuickDraw class currently has 7 main public functions for processing the dra
 - [length()](#length)
 - [points()](#points)
 - [curves()](#curves)
-- [noCurves()](#noCurves)
+- [noCurves()](#nocurves)
 
 ### create()
 
