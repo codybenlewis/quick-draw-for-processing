@@ -19,9 +19,9 @@ I hope that it enables you to new types of open source art and design as it will
   - [noCurves()](#nocurves)
 - [License](#license)
 
-## Getting Started
+# Getting Started
 
-### Prerequisites
+## Prerequisites
 
 The [latest version](https://www.processing.org/download/) of Processing.
 
@@ -38,7 +38,7 @@ The [latest version](https://www.processing.org/download/) of Processing.
 
 For this example I've downloaded and will be using the [apple.ndjson](https://storage.googleapis.com/quickdraw_dataset/full/simplified/apple.ndjson) data file :apple:.
 
-### Installing
+## Installing
 
 Once you have finished downloading your file, begin by adding it to your sketch's data folder.
 *(Sketch > Add File)*
@@ -61,7 +61,7 @@ By default, constructing the object will set the drawings on screen to have no f
 
 That's it! You're now ready to create drawings.
 
-## Reference
+# Reference
 
 The QuickDraw class currently has 7 functions for intefacing with the drawing data.
 
@@ -73,7 +73,7 @@ The QuickDraw class currently has 7 functions for intefacing with the drawing da
 - [curves()](#curves)
 - [noCurves()](#nocurves)
 
-### create()
+## create()
 
 Draws a Google Quick, Draw! drawing to the screen. This function was modeled by the Processing's built in `ellipse()` and `rect()` functions. By default, the first two parameters set the location of the upper-left corner, the third sets the width, and the fourth sets the height. The way these parameters are interpreted, however, may be changed with the `mode()` function.
 
@@ -101,9 +101,7 @@ qd.create(x1, y1, x2, y2, index, start, stop)
  stop       float: float between 0.0 and 1.0
 ```
 
----
-
-### mode()
+## mode()
 
 Modifies the location from which drawings are drawn by changing the way in which parameters given to `create()` are interpreted. This function was modeled by the Processing's built in `ellipseMode()` and `rectMode()` functions.
 
@@ -128,9 +126,7 @@ qd          QuickDraw: a QuickDraw object
 mode        int: CENTER, CORNER, or CORNERS
 ```
 
----
-
-### info()
+## info()
 
 Returns a String of information about a specified drawing. By default, the function will return all available data on the drawing across multiple lines. Data points include what source file the drawing is found in, what index of the dataset the drawing is found on, how many points the drawing is made from, what word was the drawing is based on, what country the drawing is from, and what date and time the drawing was originally created at.
 
@@ -151,9 +147,7 @@ index       int: int between 0 and the object's source file length
 dataPoint   str: "source", "index", "length", "word", "countrycode", or "timestamp"
 ```
 
----
-
-### length()
+## length()
 
 Returns an integer amount of drawings in the dataset or amount of drawn lines in an index. Used in `info()` to create the data point output as "length".
 
@@ -171,9 +165,7 @@ qd        QuickDraw: a QuickDraw object
 index     int: int between 0 and the object's source file length
 ```
 
----
-
-### points()
+## points()
 
 Returns an integer amount of points in a drawing index or one of the drawn lines within that index. Used in `info()` to create the data point output as "length".
 
@@ -192,9 +184,7 @@ index       int: int between 0 and the object's source file length
 line       int: int between 0 and the value of (qd.info(index) - 1)
 ```
 
----
-
-### curves()
+#### curves()
 
 Enables the default geometry used to smooth the lines drawn on screen within `create()`. Note that this behavior is active by default, so it only necessary to call the function to reactivate the behavior after calling `noCurves()`.
 
@@ -210,9 +200,7 @@ qd.noCurves()
 qd          QuickDraw: a QuickDraw object
 ```
 
----
-
-### noCurves()
+## noCurves()
 
 Disables the default geometry used to smooth the lines drawn on screen via `create()`. Note that `curves()` is active by default, so it is necessary to call `noCurves()` to disable smoothing of lines.
 
