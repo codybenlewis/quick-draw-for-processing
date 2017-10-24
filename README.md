@@ -21,9 +21,7 @@ I hope that it enables you to new types of open source art and design as it will
 
 # Getting Started
 
-## Prerequisites
-
-The [latest version](https://www.processing.org/download/) of Processing.
+To begin you'll have to first make sure you have the [latest version](https://www.processing.org/download/) of Processing Installed. This library has not yet been tested with deprecated versions.
 
 [Simplified Drawing Files](https://console.cloud.google.com/storage/browser/quickdraw_dataset/full/simplified) from the Google Quick, Draw! [dataset](https://github.com/googlecreativelab/quickdraw-dataset).
 
