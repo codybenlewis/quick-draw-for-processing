@@ -184,7 +184,7 @@ index       int: int between 0 and the object's source file length
 line       int: int between 0 and the value of (qd.info(index) - 1)
 ```
 
-#### curves()
+## curves()
 
 Enables the default geometry used to smooth the lines drawn on screen within `create()`. Note that this behavior is active by default, so it only necessary to call the function to reactivate the behavior after calling `noCurves()`.
 
