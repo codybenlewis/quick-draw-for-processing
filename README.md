@@ -17,13 +17,13 @@ I hope that it enables you to new types of open source art and design as it will
   - [points()](#points)
   - [curves()](#curves)
   - [noCurves()](#nocurves)
-- [License](#license)
+- [Licenses](#licenses)
 
 # Getting Started
 
-To begin, you'll have to first make sure you have the latest of Processing downloaded and installed, which you can get from [their website](https://www.processing.org/download/). You'll also need a copy of this library on your desktop, which you can get by clicking on the download button at [https://github.com/codybenlewis/Quick-Draw-for-Processing](https://github.com/codybenlewis/Quick-Draw-for-Processing) and selecting one of the packages provided.
+To begin, you'll have to first make sure you have the latest of Processing downloaded and installed, which you can get from [their website](https://www.processing.org/download/). You'll also need a copy of this library on your desktop, which you can get by clicking on the download button at https://github.com/codybenlewis/Quick-Draw-for-Processing and selecting one of the packages provided.
 
-Lastly, you'll need [Simplified Drawing Files](https://console.cloud.google.com/storage/browser/quickdraw_dataset/full/simplified) from the Google Quick, Draw! [dataset](https://github.com/googlecreativelab/quickdraw-dataset). The library has been designed specifically to work with only these types of files.
+Lastly, you'll need [Simplified Drawing Files](https://console.cloud.google.com/storage/browser/quickdraw_dataset/full/simplified) from the Google Quick, Draw! [dataset](https://github.com/googlecreativelab/quickdraw-dataset). The library will only properly work with these types of files because of how the data is structured.
 
 >**Simplified Drawing files (.ndjson)**
 >
@@ -33,6 +33,8 @@ Lastly, you'll need [Simplified Drawing Files](https://console.cloud.google.com/
 >2. Uniformly scale the drawing, to have a maximum value of 255.
 >3. Resample all strokes with a 1 pixel spacing.
 >4. Simplify all strokes using the [Ramer–Douglas–Peucker algorithm](https://en.wikipedia.org/wiki/Ramer%E2%80%93Douglas%E2%80%93Peucker_algorithm) with an epsilon value of 2.0.
+
+***Note** that previews of the data, avaiable on [the Quick, Draw site](https://quickdraw.withgoogle.com/data/), exclude drawings that were not recognized by machine learning or that have been flagged as inappropriate. Those drawings, which compromise a small percentage of the set are still available within the downloadable files. Without first manually editing local copies of the files, trying to index specific drawings by referencing the site may potentially return different results or inappropriate content.*
 
 For the provided library examples I've downloaded and included the [apple.ndjson](https://storage.googleapis.com/quickdraw_dataset/full/simplified/apple.ndjson) data file :apple:.
 
@@ -80,7 +82,7 @@ Afterwards, initialize a QuickDraw object from the class
 QuickDraw qd;
 ```
 
-and call it within `void setup()` in order to construct it.
+and call it within `void setup()` to construct it.
 
 ```java
 void setup() {
@@ -88,14 +90,26 @@ void setup() {
 }
 ```
 
-Replace `"filename.ndjson"` with the actual name of your data file, still surrounded by double quotes. In order to prevent a "NullPointerException", before running the program you'll need to make sure the data file you specify been first added to your sketch's data folder.
+Replace `"filename.ndjson"` with the actual name of your data file surrounded by double quotes. In order to prevent a "NullPointerException" before running the program, you'll need to make sure the data file you specify been first added to your sketch's data folder.
 
 - From the menubar choose File → Add File...
 - Find and open your simplified data file
 
-By default, constructing the object will change the your sketch's default `fill()` settings to `noFill()`. If you want to use filled shapes within your sketch, call the `fill()` function anywhere within `void setup()` or `void draw()` below the object's construction. For more
+By default, constructing the object will change the your sketch's `fill()` settings to `noFill()`. If you want to use filled shapes within your sketch, call the `fill()` function anywhere within `void setup()` or `void draw()` below the object's construction.
 
-That's it. You're ready to create drawings!
+That's it! You should be ready to start drawing.
+
+Let's run a simple test by using the `create()` function within within `void draw()` and running (⌘-r) the program .
+
+```
+void draw() {
+  apple.create(width/2, height/2, width/2, height/2);
+}
+```
+
+Having used the [apple.ndjson](https://storage.googleapis.com/quickdraw_dataset/full/simplified/apple.ndjson) data file, it should look like this:
+
+If you're having trouble getting to this point please check your machine settings and make sure you've followed all the above steps above properly. If it's still not working, please contact me [by e-mail](mailto:cblewisnj@gmail.com) with specififc details. At the time of writing the library has only been tested using osx with Processing 3.1.1.
 
 # Reference
 
@@ -164,7 +178,7 @@ mode        int: CENTER, CORNER, or CORNERS
 
 ## info()
 
-Returns a String of information about a specified drawing. By default, the function will return all available data on the drawing across multiple lines. Data points include what source file the drawing is found in, what index of the dataset the drawing is found on, how many points the drawing is made from, what word was the drawing is based on, what country the drawing is from, and what date and time the drawing was originally created at.
+Returns a String of information about a specified drawing. By default, the function will return all available data on the drawing across multiple lines. Data points include what source file the drawing is found in, what index of the dataset the drawing is found on, how many points the drawing is made from, what word was the drawing is based on, what country the drawing is from, what date and time the drawing was originally created at, and whether or not the drawing was recognized by the machine when it was created.
 
 When using the string "length" as the data point, the function will return the amount of points in the drawing. When using the string "index" as the data point, the function will return the index, parameter.
 
@@ -180,7 +194,7 @@ qd.info(index, "dataPoint")
 ```
 qd          QuickDraw: a QuickDraw object
 index       int: int between 0 and the object's source file length
-dataPoint   str: "source", "index", "length", "word", "countrycode", or "timestamp"
+dataPoint   str: "source", "index", "length", "word", "countrycode", "timestamp", or "recognized"
 ```
 
 ## length()
@@ -251,3 +265,19 @@ qd.noCurves()
 ```
 qd          QuickDraw: a QuickDraw object
 ```
+
+# Licenses
+Licensed under the Apache License, Version 2.0 (the "License");
+you may not use this file except in compliance with the License.
+You may obtain a copy of the License at
+
+http://www.apache.org/licenses/LICENSE-2.0
+
+Unless required by applicable law or agreed to in writing, software
+distributed under the License is distributed on an "AS IS" BASIS,
+WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+See the License for the specific language governing permissions and
+limitations under the License.
+
+
+The Google Quick, Draw! data has been made available by Google, Inc. under the [Creative Commons Attribution 4.0 International license.](https://creativecommons.org/licenses/by/4.0/)
