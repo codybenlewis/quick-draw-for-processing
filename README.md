@@ -34,7 +34,7 @@ Lastly, you'll need [Simplified Drawing Files](https://console.cloud.google.com/
 >3. Resample all strokes with a 1 pixel spacing.
 >4. Simplify all strokes using the [Ramer–Douglas–Peucker algorithm](https://en.wikipedia.org/wiki/Ramer%E2%80%93Douglas%E2%80%93Peucker_algorithm) with an epsilon value of 2.0.
 
-***Note** that previews of the data, avaiable on [the Quick, Draw site](https://quickdraw.withgoogle.com/data/), exclude drawings that were not recognized by machine learning or that have been flagged as inappropriate. Those drawings, which compromise a small percentage of the set are still available within the downloadable files. Without first manually editing local copies of the files, trying to index specific drawings by referencing the site may potentially return different results or inappropriate content.*
+***Note** that previews of the data avaiable on [the Quick, Draw site](https://quickdraw.withgoogle.com/data/) exclude drawings that were not recognized by machine learning and that may have been flagged as inappropriate. Those drawings compromise a small percentage of the set and are still available within the downloadable files. Trying to index specific drawings by referencing the site may potentially return different results or inappropriate content without first manually editing local copies of the files.*
 
 For the provided library examples I've downloaded and included the [monkey.ndjson](https://storage.googleapis.com/quickdraw_dataset/full/simplified/monkey.ndjson) data file :monkey:.
 
@@ -66,7 +66,7 @@ Processing's official [library installation instructions](https://github.com/pro
 >
 >Some folders like examples or src might be missing. After a library has been successfully installed, **restart Processing application**.
 
-If you're having trouble, please visit the [read the full documentation](https://github.com/processing/processing/wiki/How-to-Install-a-Contributed-Library) for additional information and troubleshooting tips.
+If you're having trouble, please visit the [read the full documentation](https://github.com/processing/processing/wiki/How-to-Install-a-Contributed-Library) on how to install a contributed library for additional information and troubleshooting tips.
 
 ## Using the Library
 
@@ -90,7 +90,7 @@ void setup() {
 }
 ```
 
-Replace `"filename.ndjson"` with the actual name of your data file surrounded by double quotes. In order to prevent a "NullPointerException" before running the program, you'll need to make sure the data file you specify been first added to your sketch's data folder.
+Replace `"filename.ndjson"` with the actual name of your data file surrounded by double quotes. In order to prevent a *NullPointerException* before running the program, you'll need to make sure the data file you specify been first added to your sketch's data folder.
 
 - From the menubar choose File → Add File...
 - Find and open your simplified data file
@@ -99,7 +99,7 @@ By default, constructing the object will change the your sketch's `fill()` setti
 
 That's it! You should be ready to start drawing.
 
-Let's run a simple test by using the `create()` function within within `void draw()` and running (⌘-r) the program .
+Now, let's create a simple test using the QuickDraw specific `create()` function within `void draw()`.
 
 ```
 void draw() {
@@ -107,7 +107,13 @@ void draw() {
 }
 ```
 
-Having used the [monkey.ndjson](https://storage.googleapis.com/quickdraw_dataset/full/simplified/monkey.ndjson) data file, it should look like this:
+Run the program (⌘-r).
+
+Having used the [monkey.ndjson](https://storage.googleapis.com/quickdraw_dataset/full/simplified/monkey.ndjson) data file, without any additional lines of code, it should look like this:
+
+
+
+It's a poorly drawn monkey!
 
 If you're having trouble getting to this point please check your machine settings and make sure you've followed all the above steps above properly. If it's still not working, please contact me [by e-mail](mailto:cblewisnj@gmail.com) with specififc details.
 
@@ -180,7 +186,7 @@ mode        int: CENTER, CORNER, or CORNERS
 
 Returns a String of information about a specified drawing. By default, the function will return all available data on the drawing across multiple lines. Data points include what source file the drawing is found in, what index of the dataset the drawing is found on, how many points the drawing is made from, what word was the drawing is based on, what country the drawing is from, what date and time the drawing was originally created at, and whether or not the drawing was recognized by the machine when it was created.
 
-When using the string "length" as the data point, the function will return the amount of points in the drawing. When using the string "index" as the data point, the function will return the index, parameter.
+When using the String `"length"` as the data point, the function will return the amount of points in the drawing as a String. When using the String `"index"` as the data point, the function will return the index parameter as a String.
 
 #### Syntax
 
@@ -194,12 +200,12 @@ qd.info(index, "dataPoint")
 ```
 qd          QuickDraw: a QuickDraw object
 index       int: int between 0 and the object's source file length
-dataPoint   str: "source", "index", "length", "word", "countrycode", "timestamp", or "recognized"
+dataPoint   String: "source", "index", "length", "word", "countrycode", "timestamp", or "recognized"
 ```
 
 ## length()
 
-Returns an integer amount of drawings in the dataset or amount of drawn lines in an index. Used in `info()` to create the data point output as "length".
+Returns an integer amount of drawings in the dataset or amount of drawn lines in an index. Used in `info()` to create the data point output as `"length"`.
 
 #### Syntax
 
@@ -217,7 +223,7 @@ index     int: int between 0 and the object's source file length
 
 ## points()
 
-Returns an integer amount of points in a drawing index or one of the drawn lines within that index. Used in `info()` to create the data point output as "length".
+Returns an integer amount of points in a drawing index or one of the drawn lines within that index. Used in `info()` to create the data point output as `"length"`.
 
 #### Syntax
 
@@ -231,7 +237,7 @@ qd.info(index, line)
 ```
 qd          QuickDraw: a QuickDraw object
 index       int: int between 0 and the object's source file length
-line       int: int between 0 and the value of (qd.info(index) - 1)
+line        int: int between 0 and the value of (qd.info(index) - 1)
 ```
 
 ## curves()
