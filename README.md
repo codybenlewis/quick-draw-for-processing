@@ -36,7 +36,7 @@ Lastly, you'll need [Simplified Drawing Files](https://console.cloud.google.com/
 
 ***Note** that previews of the data avaiable on [the Quick, Draw site](https://quickdraw.withgoogle.com/data/) exclude drawings that were not recognized by machine learning or that may have been flagged as inappropriate. Those drawings compromise are still available within the downloadable files, so trying to index specific drawings by referencing the site will potentially return different results or inappropriate content. For closer results you will have to manually edit local copies of the files to exclude falsely recognized drawings.*
 
-For the provided library examples I've downloaded and included the [monkey.ndjson](https://storage.googleapis.com/quickdraw_dataset/full/simplified/monkey.ndjson) data file :monkey:.
+For convenience, the library example folders include truncated versions (1000/127,633 drawings) of the `monkey.ndjson` data file :monkey:. You'll likely want to download the [full size version](https://storage.googleapis.com/quickdraw_dataset/full/simplified/monkey.ndjson) for your own programs.
 
 
 ## Installing
