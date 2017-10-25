@@ -70,7 +70,7 @@ If you're having trouble, please visit the [read the full documentation](https:/
 
 ## Using the Library
 
-Once you have finished downloading your files and installing the library, begin by adding importing the library to the sketch.
+Once you have finished downloading your files and installing the library, begin by opening up a new sketch (⌘-n) and importing the library to it.
 
 ```java
 import cbl.quickdraw.*;
@@ -112,14 +112,13 @@ Run the program (⌘-r).
 Having used the [monkey.ndjson](https://storage.googleapis.com/quickdraw_dataset/full/simplified/monkey.ndjson) data file, without any additional lines of code, it should look like this:
 
 <img src="https://github.com/codybenlewis/Quick-Draw-for-Processing/blob/master/example.png" width="28%" height="28%">
+Success! There are now at least 127,000 more to choose from. What you do next is completely up to you.
 
-It's a poorly drawn monkey!
-
-If you're having trouble getting to this point please check your machine settings and make sure you've followed all the above steps above properly. If it's still not working, please contact me [by e-mail](mailto:cblewisnj@gmail.com) with specififc details.
+If you're having trouble getting to this point please check your machine settings and make sure you've properly followed all the above. If it's still not working, please contact me [by e-mail](mailto:cblewisnj@gmail.com) with specififc details.
 
 # Reference
 
-The QuickDraw class currently has 7 functions for intefacing with the drawing data.
+The QuickDraw class has 7 functions for intefacing with the drawing data.
 
 - [create()](#create)
 - [mode()](#mode)
@@ -131,7 +130,7 @@ The QuickDraw class currently has 7 functions for intefacing with the drawing da
 
 ## create()
 
-Draws a Google Quick, Draw! drawing to the screen. This function was modeled by the Processing's built in `ellipse()` and `rect()` functions. By default, the first two parameters set the location of the upper-left corner, the third sets the width, and the fourth sets the height. The way these parameters are interpreted, however, may be changed with the `mode()` function.
+Draws a Google Quick, Draw! drawing to the screen. This function was modeled after Processing's built in `ellipse()` and `rect()` functions. By default, the first two parameters set the location of the upper-left corner, the third sets the width, and the fourth sets the height. The way these parameters are interpreted, however, may be changed with the `mode()` function.
 
 The fifth parameter sets the index of the drawing you want to pull data from and is 0 by default. The sixth and seventh parameters set the start and stop position of the drawing and are respectively 0.0 and 1.0 by default.
 
@@ -159,7 +158,7 @@ qd.create(x1, y1, x2, y2, index, start, stop)
 
 ## mode()
 
-Modifies the location from which drawings are drawn by changing the way in which parameters given to `create()` are interpreted. This function was modeled by the Processing's built in `ellipseMode()` and `rectMode()` functions.
+Modifies the location from which drawings are drawn by changing the way in which parameters given to `create()` are interpreted. This function was modeled after Processing's built in `ellipseMode()` and `rectMode()` functions.
 
 The default mode is `rectMode(CENTER)`, which interprets the first two parameters of `create()` as the shape's center point, while the third and fourth parameters are its width and height.
 
