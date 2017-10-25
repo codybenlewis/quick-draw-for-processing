@@ -111,7 +111,7 @@ Run the program (⌘-r).
 
 Using the [monkey.ndjson](https://storage.googleapis.com/quickdraw_dataset/full/simplified/monkey.ndjson) data file, without any additional lines of code, it should look like:
 
-![example](example.png) Success! There are at least 127,000 more monkeys to choose from. What you do next with these tools is completely up to you.
+![example](example.png) Success! There are at least 127,000 more monkeys to choose from. What you do next with this library is completely up to you.
 
 If you're having trouble getting to this point please make sure you've properly followed all the above and check your machine settings for any compatibility issues. If it's still not working, contact me [by e-mail](mailto:cblewisnj@gmail.com?subject=Quick%20Draw%20for%20Processing%20Troubleshooting) with specififc details for help with troubleshooting.
 
