@@ -2,7 +2,7 @@
 
 QuickDraw.pde is a [Processing](https://www.procssing.org) library that makes it easy to interface with drawings from [Google's Quick, Draw! Experiment](https://quickdraw.withgoogle.com) data set in your own sketches. 
 
-I hope that it enables you to new types of open source art and design as it will for me. If you create something with this dataset, please let me know [by e-mail](mailto:cblewisnj@gmail.com) and consider passing it along to [Google](https://aiexperiments.withgoogle.com/submit).
+I hope that it enables you to new types of open source art and design as it will for me. If you create something with this dataset, please let me know [by e-mail](mailto:cblewisnj@gmail.com?subject=I%20Made%20Something%20With%20Quick%20Draw%20for%20Processing) and consider passing it along to [Google](https://aiexperiments.withgoogle.com/submit).
 
 ## Content
 
@@ -21,9 +21,9 @@ I hope that it enables you to new types of open source art and design as it will
 
 # Getting Started
 
-To begin, you'll have to first make sure you have the latest of Processing downloaded and installed, which you can get from [their website](https://www.processing.org/download/). You'll also need a copy of this library on your desktop, which you can get by clicking on the download button at https://github.com/codybenlewis/Quick-Draw-for-Processing and selecting one of the packages provided.
+To begin, you'll have to first make sure you have the latest of Processing installed, which you can download from https://www.processing.org/download/. You'll also need a copy of this library on your desktop, which you can get by clicking on the download button at https://github.com/codybenlewis/Quick-Draw-for-Processing and selecting one of the packages provided.
 
-Lastly, you'll need [Simplified Drawing Files](https://console.cloud.google.com/storage/browser/quickdraw_dataset/full/simplified) from the Google Quick, Draw! [dataset](https://github.com/googlecreativelab/quickdraw-dataset). The library will only properly work with these types of files because of how the data is structured.
+Lastly, you'll need [Simplified Drawing Files](https://console.cloud.google.com/storage/browser/quickdraw_dataset/full/simplified) from the Google Quick, Draw! [dataset](https://github.com/googlecreativelab/quickdraw-dataset). Because of how the data is structured, this library will only properly work with these types of files.
 
 >**Simplified Drawing files (.ndjson)**
 >
@@ -34,7 +34,7 @@ Lastly, you'll need [Simplified Drawing Files](https://console.cloud.google.com/
 >3. Resample all strokes with a 1 pixel spacing.
 >4. Simplify all strokes using the [Ramer–Douglas–Peucker algorithm](https://en.wikipedia.org/wiki/Ramer%E2%80%93Douglas%E2%80%93Peucker_algorithm) with an epsilon value of 2.0.
 
-***Note** that previews of the data avaiable on [the Quick, Draw site](https://quickdraw.withgoogle.com/data/) exclude drawings that were not recognized by machine learning and that may have been flagged as inappropriate. Those drawings compromise a small percentage of the set and are still available within the downloadable files. Trying to index specific drawings by referencing the site may potentially return different results or inappropriate content without first manually editing local copies of the files.*
+***Note** that previews of the data avaiable on [the Quick, Draw site](https://quickdraw.withgoogle.com/data/) exclude drawings that were not recognized by machine learning or that may have been flagged as inappropriate. Those drawings compromise are still available within the downloadable files, so trying to index specific drawings by referencing the site will potentially return different results or inappropriate content. For closer results you will have to manually edit local copies of the files to exclude falsely recognized drawings.*
 
 For the provided library examples I've downloaded and included the [monkey.ndjson](https://storage.googleapis.com/quickdraw_dataset/full/simplified/monkey.ndjson) data file :monkey:.
 
@@ -66,11 +66,11 @@ Processing's official [library installation instructions](https://github.com/pro
 >
 >Some folders like examples or src might be missing. After a library has been successfully installed, **restart Processing application**.
 
-If you're having trouble, please visit the [read the full documentation](https://github.com/processing/processing/wiki/How-to-Install-a-Contributed-Library) on how to install a contributed library for additional information and troubleshooting tips.
+Please read the [the full documentation](https://github.com/processing/processing/wiki/How-to-Install-a-Contributed-Library) on how to install a contributed library for additional information and troubleshooting tips.
 
 ## Using the Library
 
-Once you have finished downloading your files and installing the library, begin by opening up a new sketch (⌘-n) and importing the library to it.
+Once you have finished downloading and installing the library, begin by opening up a new sketch (⌘-n) and importing the library to it.
 
 ```java
 import cbl.quickdraw.*;
@@ -82,7 +82,7 @@ Afterwards, initialize a QuickDraw object from the class
 QuickDraw qd;
 ```
 
-and call it within `void setup()` to construct it.
+and call it within `void setup()` in order to construct it.
 
 ```java
 void setup() {
@@ -90,7 +90,7 @@ void setup() {
 }
 ```
 
-Replace `"filename.ndjson"` with the actual name of your data file surrounded by double quotes. In order to prevent a *NullPointerException* before running the program, you'll need to make sure the data file you specify been first added to your sketch's data folder.
+Between the double quotes, replace `filename.ndjson` with the actual name of your data file. In order to prevent a *NullPointerException* you'll need to make sure the data file you specify been added to your sketch's data folder before running the program.
 
 - From the menubar choose File → Add File...
 - Find and open your simplified data file
@@ -109,11 +109,11 @@ void draw() {
 
 Run the program (⌘-r).
 
-Having used the [monkey.ndjson](https://storage.googleapis.com/quickdraw_dataset/full/simplified/monkey.ndjson) data file, without any additional lines of code, it should look like this:
+Using the [monkey.ndjson](https://storage.googleapis.com/quickdraw_dataset/full/simplified/monkey.ndjson) data file, without any additional lines of code, it should look like:
 
-![example](example.png) Success! There are now at least 127,000 more to choose from. What you do next is completely up to you.
+![example](example.png) Success! There are at least 127,000 more monkeys to choose from. What you do next with these tools is completely up to you.
 
-If you're having trouble getting to this point please check your machine settings and make sure you've properly followed all the above. If it's still not working, please contact me [by e-mail](mailto:cblewisnj@gmail.com) with specififc details.
+If you're having trouble getting to this point please make sure you've properly followed all the above and check your machine settings for any compatibility issues. If it's still not working, contact me [by e-mail](mailto:cblewisnj@gmail.com?subject=Quick%20Draw%20for%20Processing%20Troubleshooting) with specififc details for help with troubleshooting.
 
 # Reference
 
