@@ -103,7 +103,7 @@ Now, let's create a simple test using the QuickDraw specific `create()` function
 
 ```
 void draw() {
-  monkey.create(width/2, height/2, width/2, height/2);
+  qd.create(width/2, height/2, width/2, height/2);
 }
 ```
 
