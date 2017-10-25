@@ -203,13 +203,13 @@ dataPoint   String: "source", "index", "length", "word", "countrycode", "timesta
 
 ## length()
 
-Returns an integer amount of drawings in the dataset or amount of drawn lines in an index. Used in `info()` to create the data point output as `"length"`.
+Returns an integer amount of drawings in the data set file or returns amount of lines used within a specific drawing. Used in `info()` to create the data point output as `"length"`.
 
 #### Syntax
 
 ```
 qd.length()
-qd.info(index)
+qd.length(index)
 ```
 
 #### Parameters
@@ -221,7 +221,7 @@ index     int: int between 0 and the object's source file length
 
 ## points()
 
-Returns an integer amount of points in a drawing index or one of the drawn lines within that index. Used in `info()` to create the data point output as `"length"`.
+Returns an integer amount of points in a specific drawing or returns the amount of points in one of the lines of a specific drawing. Used in `info()` to create the data point output as `"length"`.
 
 #### Syntax
 
@@ -245,7 +245,7 @@ Enables the default geometry used to smooth the lines drawn on screen within `cr
 #### Syntax
 
 ```
-qd.noCurves()
+qd.curves()
 ```
 
 #### Parameters
