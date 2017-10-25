@@ -111,9 +111,7 @@ Run the program (⌘-r).
 
 Having used the [monkey.ndjson](https://storage.googleapis.com/quickdraw_dataset/full/simplified/monkey.ndjson) data file, without any additional lines of code, it should look like this:
 
-![example](example.png)
-
-Success! There are now at least 127,000 more to choose from. What you do next is completely up to you.
+![example](example.png) Success! There are now at least 127,000 more to choose from. What you do next is completely up to you.
 
 If you're having trouble getting to this point please check your machine settings and make sure you've properly followed all the above. If it's still not working, please contact me [by e-mail](mailto:cblewisnj@gmail.com) with specififc details.
 
