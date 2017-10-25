@@ -2,7 +2,7 @@
 
 QuickDraw.pde is a [Processing](https://www.procssing.org) library that makes it easy to interface with drawings from [Google's Quick, Draw! Experiment](https://quickdraw.withgoogle.com) data set in your own sketches. 
 
-I hope that it enables you to new types of open source art and design as it will for myself. If you create something with this dataset, please let me know [by e-mail](mailto:cblewisnj@gmail.com) and consider passing it along to [Google](https://aiexperiments.withgoogle.com/submit).
+I hope that it enables you to new types of open source art and design as it will for me. If you create something with this dataset, please let me know [by e-mail](mailto:cblewisnj@gmail.com) and consider passing it along to [Google](https://aiexperiments.withgoogle.com/submit).
 
 ## Content
 
@@ -36,7 +36,7 @@ Lastly, you'll need [Simplified Drawing Files](https://console.cloud.google.com/
 
 ***Note** that previews of the data, avaiable on [the Quick, Draw site](https://quickdraw.withgoogle.com/data/), exclude drawings that were not recognized by machine learning or that have been flagged as inappropriate. Those drawings, which compromise a small percentage of the set are still available within the downloadable files. Without first manually editing local copies of the files, trying to index specific drawings by referencing the site may potentially return different results or inappropriate content.*
 
-For the provided library examples I've downloaded and included the [apple.ndjson](https://storage.googleapis.com/quickdraw_dataset/full/simplified/apple.ndjson) data file :apple:.
+For the provided library examples I've downloaded and included the [monkey.ndjson](https://storage.googleapis.com/quickdraw_dataset/full/simplified/monkey.ndjson) data file :monkey:.
 
 
 ## Installing
@@ -103,13 +103,13 @@ Let's run a simple test by using the `create()` function within within `void dra
 
 ```
 void draw() {
-  apple.create(width/2, height/2, width/2, height/2);
+  monkey.create(width/2, height/2, width/2, height/2);
 }
 ```
 
-Having used the [apple.ndjson](https://storage.googleapis.com/quickdraw_dataset/full/simplified/apple.ndjson) data file, it should look like this:
+Having used the [monkey.ndjson](https://storage.googleapis.com/quickdraw_dataset/full/simplified/monkey.ndjson) data file, it should look like this:
 
-If you're having trouble getting to this point please check your machine settings and make sure you've followed all the above steps above properly. If it's still not working, please contact me [by e-mail](mailto:cblewisnj@gmail.com) with specififc details. At the time of writing the library has only been tested using osx with Processing 3.1.1.
+If you're having trouble getting to this point please check your machine settings and make sure you've followed all the above steps above properly. If it's still not working, please contact me [by e-mail](mailto:cblewisnj@gmail.com) with specififc details.
 
 # Reference
 
