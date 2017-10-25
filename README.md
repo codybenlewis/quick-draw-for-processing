@@ -111,7 +111,7 @@ Run the program (⌘-r).
 
 Having used the [monkey.ndjson](https://storage.googleapis.com/quickdraw_dataset/full/simplified/monkey.ndjson) data file, without any additional lines of code, it should look like this:
 
-![Monkey](/Example.png)
+<img src="https://github.com/codybenlewis/Quick-Draw-for-Processing/blob/master/example.png" width="28%" height="28%">
 
 It's a poorly drawn monkey!
 
