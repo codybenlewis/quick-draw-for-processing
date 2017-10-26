@@ -21,7 +21,7 @@ I hope that it enables you to new types of open source art and design as it will
 
 # Getting Started
 
-To begin, you'll have to first make sure you have the latest of Processing installed, which you can download from https://www.processing.org/download/. You'll also need a copy of this library on your desktop, which you can get by clicking on the download button at https://github.com/codybenlewis/Quick-Draw-for-Processing and selecting one of the packages provided.
+To begin, you'll have to first make sure you have the latest of Processing installed, which you can download from [https://www.processing.org/download/](https://www.processing.org/download/). You'll also need a copy of this library on your desktop, which you can get by clicking on the download button at [https://github.com/codybenlewis/Quick-Draw-for-Processing](https://github.com/codybenlewis/Quick-Draw-for-Processing) and selecting one of the packages provided.
 
 Lastly, you'll need [Simplified Drawing Files](https://console.cloud.google.com/storage/browser/quickdraw_dataset/full/simplified) from the Google Quick, Draw! [dataset](https://github.com/googlecreativelab/quickdraw-dataset). Because of how the data is structured, this library will only properly work with these types of files.
 
