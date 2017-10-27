@@ -21,9 +21,11 @@ I hope that it enables you to new types of open source art and design as it will
 
 # Getting Started
 
-To begin, you'll have to first make sure you have the latest of Processing installed, which you can download from [https://www.processing.org/download/](https://www.processing.org/download/). You'll also need a copy of this library on your desktop, which you can get by clicking on the download button at [https://github.com/codybenlewis/Quick-Draw-for-Processing](https://github.com/codybenlewis/Quick-Draw-for-Processing) and selecting one of the packages provided.
+To begin, you're going to need 3 things:
 
-Lastly, you'll need [Simplified Drawing Files](https://console.cloud.google.com/storage/browser/quickdraw_dataset/full/simplified) from the Google Quick, Draw! [dataset](https://github.com/googlecreativelab/quickdraw-dataset). Because of how the data is structured, this library will only properly work with these types of files.
+1. The latest version of Processing installed, which can be downloaded from [https://www.processing.org/download/](https://www.processing.org/download/).
+2. A copy of this library on your desktop, which you can get by clicking on the download button at [https://github.com/codybenlewis/Quick-Draw-for-Processing](https://github.com/codybenlewis/Quick-Draw-for-Processing) and selecting one of the packages provided.
+3. Simplified Drawing Files from the Google Quick, Draw! [dataset](https://github.com/googlecreativelab/quickdraw-dataset), which can be downloaded from [https://console.cloud.google.com/storage/browser/quickdraw_dataset/full/simplified](https://console.cloud.google.com/storage/browser/quickdraw_dataset/full/simplified) Because of how the data is structured, this library will only work properly with these types of files.
 
 >**Simplified Drawing files (.ndjson)**
 >
@@ -34,10 +36,9 @@ Lastly, you'll need [Simplified Drawing Files](https://console.cloud.google.com/
 >3. Resample all strokes with a 1 pixel spacing.
 >4. Simplify all strokes using the [Ramer–Douglas–Peucker algorithm](https://en.wikipedia.org/wiki/Ramer%E2%80%93Douglas%E2%80%93Peucker_algorithm) with an epsilon value of 2.0.
 
-***Note** that previews of the data avaiable on [the Quick, Draw site](https://quickdraw.withgoogle.com/data/) exclude drawings that were not recognized by machine learning or that may have been flagged as inappropriate. Those drawings compromise are still available within the downloadable files, so trying to index specific drawings by referencing the site will potentially return different results or inappropriate content. For closer results you will have to manually edit local copies of the files to exclude falsely recognized drawings.*
+***Note** that previews of the data avaiable on [the Quick, Draw site](https://quickdraw.withgoogle.com/data/) exclude drawings that were not recognized by machine learning or that may have been flagged as inappropriate. Those drawings are still available within the downloadable files. Trying to index specific drawings by referencing the site will potentially return different results or inappropriate content. For closer results you will have to manually edit local copies of the files to exclude falsely recognized drawings.*
 
-For convenience, the library example folders include truncated versions (1000/127,633 drawings) of the `monkey.ndjson` data file :monkey:. You'll likely want to download the [full size version](https://storage.googleapis.com/quickdraw_dataset/full/simplified/monkey.ndjson) for your own programs.
-
+For convenience, this library's example folders already include truncated versions (1000/127,633 drawings) of the [monkey.ndjson](https://storage.googleapis.com/quickdraw_dataset/full/simplified/monkey.ndjson) file :monkey:.
 
 ## Installing
 
@@ -66,7 +67,7 @@ Processing's official [library installation instructions](https://github.com/pro
 >
 >Some folders like examples or src might be missing. After a library has been successfully installed, **restart Processing application**.
 
-Please read the [the full documentation](https://github.com/processing/processing/wiki/How-to-Install-a-Contributed-Library) on how to install a contributed library for additional information and troubleshooting tips.
+Please read the [the full documentation](https://github.com/processing/processing/wiki/How-to-Install-a-Contributed-Library) on how to install a contributed Library for additional information and troubleshooting tips.
 
 ## Using the Library
 
@@ -111,7 +112,7 @@ Run the program (⌘-r).
 
 Using the [monkey.ndjson](https://storage.googleapis.com/quickdraw_dataset/full/simplified/monkey.ndjson) data file, without any additional lines of code, it should look like:
 
-![example](example.png) Success! There are at least 127,000 more monkeys to choose from. What you do next with this library is completely up to you.
+![example](example.png) Success! There are at least 127,000 more monkeys to choose from. What you do next with this Library is completely up to you.
 
 If you're having trouble getting to this point, please make sure you've properly followed all the above and check your machine settings for any compatibility issues. If it's still not working, contact me [by e-mail](mailto:cblewisnj@gmail.com?subject=Quick%20Draw%20for%20Processing%20Troubleshooting) with specififc details for help with troubleshooting.
 
