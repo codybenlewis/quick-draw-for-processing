@@ -2,7 +2,7 @@
 
 QuickDraw.pde is a [Processing](https://www.procssing.org) library that makes it easy to interface with drawings from [Google's Quick, Draw! Experiment](https://quickdraw.withgoogle.com) data set in your own sketches. 
 
-I hope that it enables you to new types of open source art and design as it will for me. If you create something with this dataset, please let me know [by e-mail](mailto:cblewisnj@gmail.com?subject=I%20Made%20Something%20With%20Quick%20Draw%20for%20Processing) and consider passing it along to [Google](https://aiexperiments.withgoogle.com/submit).
+I hope that it enables you to new types of open source art and design as it will for me. If you create something with this dataset, please let me know [by e-mail](mailto:cblewisnj@gmail.com?subject=I%20Made%20Something%20With%20Quick%20Draw%20for%20Processing) and consider passing it along to [Google](https://aiexperiments.withgoogle.com/submit).  
 
 ## Content
 
@@ -21,24 +21,24 @@ I hope that it enables you to new types of open source art and design as it will
 
 # Getting Started
 
-To begin, you're going to need 3 things:
+To begin, you will need 3 things:
 
 1. The latest version of Processing installed, which can be downloaded from [https://www.processing.org/download/](https://www.processing.org/download/).
 2. A copy of this library on your desktop, which you can get by clicking on the download button at [https://github.com/codybenlewis/Quick-Draw-for-Processing](https://github.com/codybenlewis/Quick-Draw-for-Processing) and selecting one of the packages provided.
 3. Simplified Drawing Files from the Google Quick, Draw! [dataset](https://github.com/googlecreativelab/quickdraw-dataset), which can be downloaded from [https://console.cloud.google.com/storage/browser/quickdraw_dataset/full/simplified](https://console.cloud.google.com/storage/browser/quickdraw_dataset/full/simplified) Because of how the data is structured, this library will only work properly with these types of files.
 
->**Simplified Drawing files (.ndjson)**
->
->We've simplified the vectors, removed the timing information, and positioned and scaled the data into a 256x256 region. The data is exported in ndjson format with the same metadata as the raw format. The simplification process was:
->
->1. Align the drawing to the top-left corner, to have minimum values of 0.
->2. Uniformly scale the drawing, to have a maximum value of 255.
->3. Resample all strokes with a 1 pixel spacing.
->4. Simplify all strokes using the [Ramer–Douglas–Peucker algorithm](https://en.wikipedia.org/wiki/Ramer%E2%80%93Douglas%E2%80%93Peucker_algorithm) with an epsilon value of 2.0.
+   >**Simplified Drawing files (.ndjson)**
+   >
+   >We've simplified the vectors, removed the timing information, and positioned and scaled the data into a 256x256 region. The data is exported in ndjson format with the same metadata as the raw format. The simplification process was:
+   >
+   >1. Align the drawing to the top-left corner, to have minimum values of 0.
+   >2. Uniformly scale the drawing, to have a maximum value of 255.
+   >3. Resample all strokes with a 1 pixel spacing.
+   >4. Simplify all strokes using the [Ramer–Douglas–Peucker algorithm](https://en.wikipedia.org/wiki/Ramer%E2%80%93Douglas%E2%80%93Peucker_algorithm) with an epsilon value of 2.0.
 
-***Note** that previews of the data avaiable on [the Quick, Draw site](https://quickdraw.withgoogle.com/data/) exclude drawings that were not recognized by machine learning or that may have been flagged as inappropriate. Those drawings are still available within the downloadable files. Trying to index specific drawings by referencing the site will potentially return different results or inappropriate content. For closer results you will have to manually edit local copies of the files to exclude falsely recognized drawings.*
+   ***Note** that previews of the data avaiable on [the Quick, Draw site](https://quickdraw.withgoogle.com/data/) exclude drawings that were not recognized by machine learning or that may have been flagged as inappropriate. Those drawings are still available within the downloadable files. Trying to index specific drawings by referencing the site will potentially return different results or inappropriate content. For closer results you will have to manually edit local copies of the files to exclude falsely recognized drawings.*
 
-For convenience, this library's example folders already include truncated versions (1000/127,633 drawings) of the [monkey.ndjson](https://storage.googleapis.com/quickdraw_dataset/full/simplified/monkey.ndjson) file :monkey:.
+   For convenience, this library's example folders already include truncated versions (1000/127,633 drawings) of the [monkey.ndjson](https://storage.googleapis.com/quickdraw_dataset/full/simplified/monkey.ndjson) file :monkey:.
 
 ## Installing
 
