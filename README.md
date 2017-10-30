@@ -2,7 +2,7 @@
 
 QuickDraw.pde is a [Processing](https://www.procssing.org) library that makes it easy to interface with drawings from [Google's Quick, Draw! Experiment](https://quickdraw.withgoogle.com) data set in your own sketches. 
 
-I hope that it enables you to new types of open source art and design as it will for me. If you create something with this dataset, please let me know [by e-mail](mailto:cblewisnj@gmail.com?subject=I%20Made%20Something%20With%20Quick%20Draw%20for%20Processing) and consider passing it along to [Google](https://aiexperiments.withgoogle.com/submit).  
+I hope that it enables you to new types of open source art and design as it will for me. If you create something with this library, please let me know [by e-mail](mailto:cblewisnj@gmail.com?subject=I%20Made%20Something%20With%20Quick%20Draw%20for%20Processing) and consider passing it along to [Google](https://aiexperiments.withgoogle.com/submit).  
 
 ## Content
 
@@ -24,7 +24,7 @@ I hope that it enables you to new types of open source art and design as it will
 To begin, you will need 3 things:
 
 1. The latest version of Processing installed, which can be downloaded from [https://www.processing.org/download/](https://www.processing.org/download/).
-2. A copy of this library on your desktop, which you can get by clicking on the download button at [https://github.com/codybenlewis/Quick-Draw-for-Processing](https://github.com/codybenlewis/Quick-Draw-for-Processing) and selecting one of the packages provided.
+2. A copy of this library on your desktop, which you can get by clicking on the download button at [https://github.com/codybenlewis/Quick-Draw-for-Processing](https://github.com/codybenlewis/Quick-Draw-for-Processing) and selecting one of the packages provided. After unzipping the folder, **rename it from "Quick-Draw-for-Processing-master" to "QuickDraw."** The library name needs to match that of the .jar source file inside. It will not work without this step.
 3. Simplified Drawing Files from the Google Quick, Draw! [dataset](https://github.com/googlecreativelab/quickdraw-dataset), which can be downloaded from [https://console.cloud.google.com/storage/browser/quickdraw_dataset/full/simplified](https://console.cloud.google.com/storage/browser/quickdraw_dataset/full/simplified). Because of how the data is structured, this library will only work properly with these types of files.
 
    >**Simplified Drawing files (.ndjson)**
@@ -114,7 +114,7 @@ Using the [monkey.ndjson](https://storage.googleapis.com/quickdraw_dataset/full/
 
 ![example](example.png) Success! There are at least 127,000 more monkeys to choose from. What you do next with this Library is completely up to you.
 
-If you're having trouble getting to this point, please make sure you've properly followed all the above and check your machine settings for any compatibility issues. If it's still not working, contact me [by e-mail](mailto:cblewisnj@gmail.com?subject=Quick%20Draw%20for%20Processing%20Troubleshooting) with specififc details for help with troubleshooting.
+If you have trouble getting to this point, please make sure you've properly followed all the steps above. If it's still not working, contact me [by e-mail](mailto:cblewisnj@gmail.com?subject=Quick%20Draw%20for%20Processing%20Troubleshooting) with specififc details for help with troubleshooting.
 
 # Reference
 
