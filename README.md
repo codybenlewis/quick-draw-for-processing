@@ -1,5 +1,5 @@
 ![logo](logo.png)
-# Quick Draw for Processing
+# Quick, Draw! for Processing
 
 Quick, Draw! for Processing is a [Processing](https://www.procssing.org) library that makes it easy to interface with drawings from [Google's Quick, Draw! Experiment](https://quickdraw.withgoogle.com) data set in your own coding sketches. 
 
