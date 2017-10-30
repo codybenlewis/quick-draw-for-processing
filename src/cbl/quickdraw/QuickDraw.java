@@ -29,7 +29,7 @@ public class QuickDraw {
    * interpret the x1, y1, x2, and y2 data from the "create" function
    */
 
-  int mode;
+  int modeSet;
 
   /* An integer not found in any the Google QuickDraw data used to determine the end
    * of a stroke in a drawing
@@ -63,7 +63,7 @@ public class QuickDraw {
 
     // Sets the default position interpretation to CENTER
 
-    mode = PConstants.CENTER;
+    modeSet = PConstants.CENTER;
 
     // Loads the data for the default index;
 
@@ -106,11 +106,11 @@ public class QuickDraw {
      * The default mode is CENTER.
      */
 
-    if (mode != PConstants.CENTER) {
-      if (mode == PConstants.CORNER) {
+    if (modeSet != PConstants.CENTER) {
+      if (modeSet == PConstants.CORNER) {
         x1 += x2/2;
         y1 += y2/2;
-      } else if (mode == PConstants.CORNERS) {
+      } else if (modeSet == PConstants.CORNERS) {
         x2 = x2 - x1; 
         y2 = y2 - y1;
         x1 += x2/2;
@@ -279,12 +279,12 @@ public class QuickDraw {
    * language. The built in variables CENTER, CORNER, and CORNERS equate to the integers
    * 3, 0, and 1 respectively, which can also be input as parameters.
    * 
-   * @param m			int: CENTER, CORNER, or CORNERS
+   * @param mode			int: CENTER, CORNER, or CORNERS
    */
 
   
   public void mode(int mode) {
-    mode = mode;
+    modeSet = mode;
   }
 
   
@@ -384,8 +384,9 @@ public String info(int index, String dataPoint) {
 
 
   /**
-   * Returns an integer amount of drawings in the data set or amount of drawn lines in
-   * an index. Used in info() to create the data point output as "length".
+   * Returns an integer amount of drawings in the data set file or returns amount of
+   * lines used within a specific drawing. Used in `info()` to create the data point
+   * output as `"length"`.
    * 
    * @param index 		int: int between 0 and the object's source file length
    * 
@@ -423,8 +424,9 @@ public String info(int index, String dataPoint) {
 
 
   /**
-   * Returns an integer amount of points in a drawing index or one of the drawn lines
-   * within that index. Used in info() to create the data point output as "length".
+   * Returns an integer amount of points in a specific drawing or returns the amount of
+   * points in one of the lines of a specific drawing. Used in `info()` to create the
+   * data point output as `"length"`.
    * 
    * @param index	 int: int between 0 and the object's source file length
    * @param line		 int: int between 0 and the value of (qd.info(index) - 1)
