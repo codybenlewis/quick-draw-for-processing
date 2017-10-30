@@ -114,7 +114,7 @@ Using the [monkey.ndjson](https://storage.googleapis.com/quickdraw_dataset/full/
 
 ![example](example.png) Success! There are at least 127,000 more monkeys to choose from. What you do next with this Library is completely up to you.
 
-If you're having trouble getting to this point, please make sure you've properly followed all the above and check your machine settings for any compatibility issues. If it's still not working, contact me [by e-mail](mailto:cblewisnj@gmail.com?subject=Quick%20Draw%20for%20Processing%20Troubleshooting) with specififc details for help with troubleshooting.
+If you have trouble getting to this point, please make sure you've properly followed all the steps above. If it's still not working, contact me [by e-mail](mailto:cblewisnj@gmail.com?subject=Quick%20Draw%20for%20Processing%20Troubleshooting) with specififc details for help with troubleshooting.
 
 # Reference
 
