@@ -24,7 +24,7 @@ I hope that it enables you to new types of open source art and design as it will
 To begin, you will need 3 things:
 
 1. The latest version of Processing installed, which can be downloaded from [https://www.processing.org/download/](https://www.processing.org/download/).
-2. A copy of this library on your desktop, which you can get by clicking on the download button at [https://github.com/codybenlewis/Quick-Draw-for-Processing](https://github.com/codybenlewis/Quick-Draw-for-Processing) and selecting one of the packages provided. After unzipping the folder, **make sure to rename it "QuickDraw"** so that it has the same name as the .jar source file that will end up being imported into your sketches.
+2. A copy of this library on your desktop, which you can get by clicking on the download button at [https://github.com/codybenlewis/Quick-Draw-for-Processing](https://github.com/codybenlewis/Quick-Draw-for-Processing) and selecting one of the packages provided. After unzipping the folder, **rename it "QuickDraw" so that the libaray name matches the .jar source file within. The library will not work without this step.**
 3. Simplified Drawing Files from the Google Quick, Draw! [dataset](https://github.com/googlecreativelab/quickdraw-dataset), which can be downloaded from [https://console.cloud.google.com/storage/browser/quickdraw_dataset/full/simplified](https://console.cloud.google.com/storage/browser/quickdraw_dataset/full/simplified). Because of how the data is structured, this library will only work properly with these types of files.
 
    >**Simplified Drawing files (.ndjson)**
