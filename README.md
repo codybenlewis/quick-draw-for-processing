@@ -1,3 +1,4 @@
+![logo](logo.png)
 # QuickDraw.pde
 
 QuickDraw.pde is a [Processing](https://www.procssing.org) library that makes it easy to interface with drawings from [Google's Quick, Draw! Experiment](https://quickdraw.withgoogle.com) data set in your own sketches. 
