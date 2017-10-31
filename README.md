@@ -1,7 +1,7 @@
 ![logo](logo.png)
 # Quick, Draw! for Processing
 
-Quick, Draw! for Processing is a [Processing](https://www.procssing.org) library that makes it easy to interface with drawings from [Google's Quick, Draw!](https://quickdraw.withgoogle.com) experiment in your own coding sketches. 
+Quick, Draw! for Processing is a [Processing](https://www.processing.org) library that makes it easy to interface with drawings from [Google's Quick, Draw!](https://quickdraw.withgoogle.com) experiment in your own coding sketches. 
 
 I hope that it enables you to new types of open source art and design as it will for me. If you create something with this library, please let me know [by e-mail](mailto:cblewisnj@gmail.com?subject=I%20Made%20Something%20With%20Quick%20Draw%20for%20Processing) and consider passing it along to [Google](https://aiexperiments.withgoogle.com/submit).  
 
