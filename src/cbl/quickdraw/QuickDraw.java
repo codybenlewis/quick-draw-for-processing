@@ -8,7 +8,7 @@ import processing.data.*;
 
 /**
  * A Processing library that makes it easy to interface with drawings from Google's
- * Quick, Draw! Experiment data set in your own sketches.
+ * Quick, Draw! Experiment dataset in your own sketches.
  * 
  * @example 
  */
@@ -291,7 +291,7 @@ public class QuickDraw {
 /**
  * Returns a String of information about a specified drawing. By default, the function
  * will return all available data on the drawing across multiple lines. Data points
- * include what source file the drawing is found in, what index of the data set the
+ * include what source file the drawing is found in, what index of the dataset the
  * drawing is found on, how many points the drawing is made from, what word was the
  * drawing is based on, what country the drawing is from, and what date and time the
  * drawing was originally created atwhat date and time the drawing was originally created
@@ -384,7 +384,7 @@ public String info(int index, String dataPoint) {
 
 
   /**
-   * Returns an integer amount of drawings in the data set file or returns amount of
+   * Returns an integer amount of drawings in the dataset file or returns amount of
    * lines used within a specific drawing. Used in `info()` to create the data point
    * output as `"length"`.
    * 
