@@ -205,7 +205,7 @@ dataPoint   String: "source", "index", "length", "word", "countrycode", "timesta
 
 ## length()
 
-Returns an integer amount of drawings in the data set file or returns amount of lines used within a specific drawing. Used in `info()` to create the data point output as `"length"`.
+Returns an integer amount of drawings in the dataset file or returns amount of lines used within a specific drawing. Used in `info()` to create the data point output as `"length"`.
 
 #### Syntax
 
