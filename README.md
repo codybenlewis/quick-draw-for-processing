@@ -37,7 +37,7 @@ To begin, you will need 3 things:
    >3. Resample all strokes with a 1 pixel spacing.
    >4. Simplify all strokes using the [Ramer–Douglas–Peucker algorithm](https://en.wikipedia.org/wiki/Ramer%E2%80%93Douglas%E2%80%93Peucker_algorithm) with an epsilon value of 2.0.
 
-   ***Note** that previews of the data avaiable on [the Quick, Draw site](https://quickdraw.withgoogle.com/data/) exclude drawings that were not recognized by machine learning or that may have been flagged as inappropriate. Those drawings are still available within the downloadable files. Trying to index specific drawings by referencing the site will potentially return different results or inappropriate content. For closer results you will have to manually edit local copies of the files to exclude falsely recognized drawings.*
+   ***Note** that previews of the data available on [the Quick, Draw site](https://quickdraw.withgoogle.com/data/) exclude drawings that were not recognized by machine learning or that may have been flagged as inappropriate by users. Those drawings are still available within the downloadable files, so trying to select specific drawings by referencing the site will potentially return different results or inappropriate content in your programs. For closer results you will have to manually edit local copies of the files to exclude falsely recognized drawings.*
 
    For convenience, this library's example folders already include truncated versions (1000/127,633 drawings) of the [monkey.ndjson](https://storage.googleapis.com/quickdraw_dataset/full/simplified/monkey.ndjson) file :monkey:.
 
