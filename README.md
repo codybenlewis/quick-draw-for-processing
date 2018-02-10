@@ -13,6 +13,7 @@ I hope that it enables you to new types of open source art and design as it will
 - [Reference](#reference)
   - [create()](#create)
   - [mode()](#mode)
+  - [align()](#align)
   - [info()](#info)
   - [length()](#length)
   - [points()](#points)
@@ -123,6 +124,7 @@ The QuickDraw class has 7 functions for intefacing with the drawing data.
 
 - [create()](#create)
 - [mode()](#mode)
+- [align()](#align)
 - [info()](#info)
 - [length()](#length)
 - [points()](#points)
@@ -131,7 +133,7 @@ The QuickDraw class has 7 functions for intefacing with the drawing data.
 
 ## create()
 
-Draws a Google Quick, Draw! drawing to the screen. This function was modeled after Processing's built in `ellipse()` and `rect()` functions. By default, the first two parameters set the location of the upper-left corner, the third sets the width, and the fourth sets the height. The way these parameters are interpreted, however, may be changed with the `mode()` function.
+Draws a Google Quick, Draw! drawing to the screen. This function was modeled after Processing's built-in `ellipse()` and `rect()` functions. By default, the first two parameters set the location of the upper-left corner, the third sets the width, and the fourth sets the height. The way these parameters are interpreted, however, may be changed with the `mode()` function.
 
 The fifth parameter sets the index of the drawing you want to pull data from and is 0 by default. The sixth and seventh parameters set the start and stop position of the drawing and are respectively 0.0 and 1.0 by default.
 
@@ -159,15 +161,15 @@ qd.create(x1, y1, x2, y2, index, start, stop)
 
 ## mode()
 
-Modifies the location from which drawings are drawn by changing the way in which parameters given to `create()` are interpreted. This function was modeled after Processing's built in `ellipseMode()` and `rectMode()` functions.
+Modifies the location from which drawings are drawn by changing the way in which parameters given to `create()` are interpreted. This function was modeled after Processing's built-in `ellipseMode()` and `rectMode()` functions.
 
-The default mode is `rectMode(CENTER)`, which interprets the first two parameters of `create()` as the shape's center point, while the third and fourth parameters are its width and height.
+The default mode is `mode(CENTER)`, which interprets the first two parameters of `create()` as the shape's center point, while the third and fourth parameters are its width and height.
 
-`rectMode(CORNER)` interprets the first two parameters of `rect()` as the upper-left corner of the shape, while the third and fourth parameters are its width and height.
+`mode(CORNER)` interprets the first two parameters of `create()` as the upper-left corner of the shape, while the third and fourth parameters are its width and height.
 
-`rectMode(CORNERS)` interprets the first two parameters of `rect()` as the location of one corner, and the third and fourth parameters as the location of the opposite corner.
+`mode(CORNERS)` interprets the first two parameters of `create()` as the location of one corner, and the third and fourth parameters as the location of the opposite corner.
 
-The parameter must be written in ALL CAPS because Processing is a case-sensitive language. The built in variables CENTER, CORNER, and CORNERS equate to the integers 3, 0, and 1 respectively, which can also be input as parameters.
+The parameter must be written in ALL CAPS because Processing is a case-sensitive language. The built-in variables CENTER, CORNER, and CORNERS equate to the integers 3, 0, and 1 respectively, which can also be input as parameters.
 
 #### Syntax
 
@@ -180,6 +182,28 @@ qd.mode(mode)
 ```
 qd          QuickDraw: a QuickDraw object
 mode        int: CENTER, CORNER, or CORNERS
+```
+
+## align()
+Modifies the alignment of how drawings are created within their bounding boxes. Controlling the interpretation of the box itself is done using the `mode()` function. This function was modeled after Processing's built-in `textAlign()` function.
+ 
+By default drawings have been aligned to their LEFT, TOP corner, scaled until reaching the first constraining border, RIGHT or BOTTOM. Drawings that are taller than they are wide take up the full height of the bounding box and cannot be aligned vertically. Drawings that are wider than they are tall take up the full width of the bounding box and cannot be aligned horizontally. Therefore, while both x and y properties are used, only one will appear active when compared to the original drawing.
+
+The parameter must be written in ALL CAPS because Processing is a case-sensitive language. The built-in variables LEFT, RIGHT, TOP, BOTTOM, and CENTER equate to the integers 37, 39, and 101, 102, and 3 respectively, which can also be input as parameters.
+
+#### Syntax
+
+```
+qd.info(alignX)
+qd.info(alignX, alignY)
+```
+
+#### Parameters
+
+```
+qd          QuickDraw: a QuickDraw object
+alignX      int: LEFT, RIGHT, or CENTER
+alignY      int: TOP, BOTTOM, or CENTER
 ```
 
 ## info()
