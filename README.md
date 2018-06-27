@@ -194,8 +194,8 @@ The parameter must be written in ALL CAPS because Processing is a case-sensitive
 #### Syntax
 
 ```
-qd.info(alignX)
-qd.info(alignX, alignY)
+qd.align(alignX)
+qd.align(alignX, alignY)
 ```
 
 #### Parameters
@@ -252,8 +252,8 @@ Returns an integer amount of points in a specific drawing or returns the amount 
 #### Syntax
 
 ```
-qd.info(index)
-qd.info(index, line)
+qd.points(index)
+qd.points(index, line)
 ```
 
 #### Parameters
